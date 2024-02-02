@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    link href="css/epstyles.css" rel="stylesheet" type="text/css"
+    script src="htmx.min.js"
+  - auth = "/"
+  body id="body" hx-get="#{auth}" hx-trigger="load"
+    div.container
+      header.header
+        h2.title #{"//"}easy<span style="color:#59f">P</span>ush
+        div
+          .dropdown
+            button.dropbtn users
+            .dropdown-content
+              a href="" hx-get="/userform" hx-target="#main" add user
+              a href="" hx-get="/users" hx-target="#main" list users
+          .dropdown
+            button.dropbtn user Groups
+            .dropdown-content
+              a href="" add user group
+              a href="" list user group
+        button.btn hx-get="/login" hx-target="#body" LogOut
+      hr size="1"
+      .main id="main"

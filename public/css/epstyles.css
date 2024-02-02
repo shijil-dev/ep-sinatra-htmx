@@ -1,0 +1,124 @@
+body {
+  background: #fff;
+  margin: 0;
+  font-family: "monospace";
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #ffe;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.title {
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  background: #000;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #fff;
+
+}
+.btn:hover {
+  background: grey;
+}
+
+.nobtn {
+  border: none;
+  text-decoration: bold;
+  border-radius:5px;
+  padding: 10px;
+}
+
+.main {
+  display: flex;
+  background: #fff;
+  height: 600px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.midbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box30 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  border: 2px solid #000;
+  border-radius:10px;
+  max-height: 30%;
+  max-width: 30%;
+  padding: 5em 10em;
+  gap: 10px;
+  margin: 5em;
+  font-weight: bold;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius:10px;
+  padding: 2em;
+  gap: 10px;
+  margin: 10px;
+  max-width: 30%;
+}
+
+/* dropdown menu */
+.dropbtn {
+  border: none;
+  text-decoration: bold;
+  border-radius:5px;
+  padding: 10px;
+  width:200px;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  background-color: #59f;
+  cursor: pointer;
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: #00A4BD;
+  cursor: pointer;
+}
+/* flex  */
+.flcolumn {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
