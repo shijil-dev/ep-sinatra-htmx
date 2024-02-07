@@ -1,9 +1,9 @@
 .box
-  .flcolumn
-    label name
-    input name="name" placeholder="your name"
-  .flcolumn
-    label email
-    input name="email" placeholder="your email"
-  button.btn Add
+  form hx-post="/user" hx-target="#main"
+    .flcolumn
+      label name
+      input name="name" placeholder="your name"
+      label email
+      input name="email" placeholder="your email"
+      button.btn type="submit" Add
 
