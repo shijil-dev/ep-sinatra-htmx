@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta charset="UTF-8"
+    title easyPush
     link href="css/epstyles.css" rel="stylesheet" type="text/css"
     script src="htmx.min.js"
   - auth = "/"
@@ -16,10 +17,10 @@ html
               a href="" hx-get="/userform" hx-target="#main" add user
               a href="" hx-get="/users" hx-target="#main" list users
           .dropdown
-            button.dropbtn user Groups
+            button.dropbtn Groups
             .dropdown-content
-              a href="" add user group
-              a href="" list user group
+              a href="" add group
+              a href="" list groups
         button.btn hx-get="/login" hx-target="#body" LogOut
       hr size="1"
       .main id="main"
