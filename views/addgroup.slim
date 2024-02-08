@@ -1,10 +1,12 @@
 .midbox
   form hx-post="/user" hx-target="#main"
     .flcolumn
-      label name
+      label Group name
       input name="name" placeholder="your name"
-      label email
-      input name="email" placeholder="your email"
+      label users
+      select
+        option dummy
+        option dummy
       .flrow
         .flcolumn
           label password
@@ -13,4 +15,3 @@
           label confirm password
           input type="password" name="cpassword"
       button.btn type="submit" Add
-

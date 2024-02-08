@@ -2,15 +2,33 @@ require 'sinatra'
 require 'slim'
 
 users = []
-
+auth=false
 get "/" do
   slim :index
-end 
+end
+
+get "/auth" do
+  if auth
+    slim :index
+  else
+    slim :login
+  end
+end
 
 get "/login" do
+  auth=false
   slim :login
 end 
 
+post "/login" do
+  if params['email']=="user" && params['password']=="password"
+    auth=true
+    slim :index
+  else
+    @msg="wrong credentials"
+    slim :login
+  end
+end
 get '/users' do
   users.map {|u| slim :userlist, {locals:u}}
 end
@@ -42,4 +60,20 @@ post "/useredit" do
   e=params['email']
   user={name:n,email:e}
   slim :useredit ,{locals:user}
+end
+
+get "/group/form" do
+  slim :addgroup
+end
+
+get "/search/form" do
+  slim :search
+end
+
+post "/search" do
+  p params['q']
+end
+
+delete "/fade_out_demo" do
+  p ""
 end

@@ -1,10 +1,11 @@
 .midbox
-  h2.title href="#" #{"//"}easy<span style="color:#59f">P</span>ush
-  form class="box30"
+  .header 
+    h2.title href="#" #{"//"}easy<span style="color:#59f">P</span>ush
+  form class="box30" hx-post="/login" hx-target="#body"
     .flcolumn
       label email
-      input type="text" name="email"
+      input type="text" name="email" placeholder="email"
       label password
-      input type="password" name="password" 
-      button.btn Login
-    
+      input type="password" name="password"  placeholder="********"
+      .error #{@msg}
+      button.btn type="submit" Login 

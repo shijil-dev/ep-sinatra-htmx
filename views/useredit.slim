@@ -1,8 +1,15 @@
-.box
+.midbox
   form hx-patch="/user" hx-target="#main"
     .flcolumn
       label name
       input name="name" placeholder="your name" value="#{name}"
       label email
       input name="email" placeholder="your email" value="#{email}"
-      button.btn type="submit" edit
+      .flrow
+        .flcolumn
+          label password
+          input type="password" name="password"
+        .flcolumn
+          label confirm password
+          input type="password" name="cpassword"
+      button.btn type="submit" Submit

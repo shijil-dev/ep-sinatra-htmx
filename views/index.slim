@@ -5,11 +5,11 @@ html
     title easyPush
     link href="css/epstyles.css" rel="stylesheet" type="text/css"
     script src="htmx.min.js"
-  - auth = "/"
-  body id="body" hx-get="#{auth}" hx-trigger="load"
+  body id="body" hx-get="/auth" hx-trigger="load"
     div.container
       header.header
-        h2.title #{"//"}easy<span style="color:#59f">P</span>ush
+        div hx-get="/" hx-target="#body"
+          h2.title #{"//"}easy<span style="color:#59f">P</span>ush
         div
           .dropdown
             button.dropbtn users
@@ -19,8 +19,10 @@ html
           .dropdown
             button.dropbtn Groups
             .dropdown-content
-              a href="" add group
+              a href="" hx-get="/group/form" hx-target="#main" add group
               a href="" list groups
+        button.hbtn hx-get="/search/form" hx-target="#main" search
         button.btn hx-get="/login" hx-target="#body" LogOut
       hr size="1"
       .main id="main"
+        button class="fade-me-out" hx-delete="/fade_out_demo" hx-swap="outerHTML swap:1s" Fade Me Out
