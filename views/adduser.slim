@@ -1,16 +1,27 @@
 .midbox
-  form hx-post="/user" hx-target="#main"
+  form name="user" hx-post="/user" hx-target="#main" hx-swap="outerHTML"
     .flcolumn
-      label name
-      input name="name" placeholder="your name"
-      label email
-      input name="email" placeholder="your email"
+      label Fullname
+      input name="user[name]" placeholder="your name"
+      label Username
+      input name="user[uname]" placeholder="Email"
       .flrow
         .flcolumn
           label password
-          input type="password" name="password"
+          input type="password" name="password" hx-post="/validate/password" hx-target="this" hx-swap="outerHTML" hx-trigger="keyup changed delay:1s"
         .flcolumn
           label confirm password
           input type="password" name="cpassword"
+      .flrow
+        .flcolumn
+          label Department
+          input name="dep" placeholder="Department"
+        .flcolumn
+          label Designation
+          input name="designation" placeholder="Designation"
+      label Date of Birth
+      input name="user[dob]" placeholder="dd/mm/yy" type="date"
+      label Designation
+      input name="designation" placeholder="Designation"
       button.btn type="submit" Add
 

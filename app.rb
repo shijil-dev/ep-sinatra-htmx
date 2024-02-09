@@ -2,6 +2,7 @@ require 'sinatra'
 require 'slim'
 
 users = []
+new=[]
 auth=false
 get "/" do
   slim :index
@@ -39,9 +40,9 @@ end
 
 post "/user" do
   n=params['name']
-  e=params['email']
-  users.push({name:n,email:e})
-  slim :adduser
+  e=params['uname']
+  users.push(params[:user])
+  p users
 end
 
 post "/useropt" do
@@ -76,4 +77,8 @@ end
 
 delete "/fade_out_demo" do
   p ""
+end
+
+post "/validate/password" do
+  p "nooo"
 end
