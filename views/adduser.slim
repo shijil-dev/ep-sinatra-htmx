@@ -8,20 +8,54 @@
       .flrow
         .flcolumn
           label password
-          input type="password" name="password" hx-post="/validate/password" hx-target="this" hx-swap="outerHTML" hx-trigger="keyup changed delay:1s"
+          input type="password" name="password"
         .flcolumn
           label confirm password
-          input type="password" name="cpassword"
+          input type="user[password]" name="cpassword"
       .flrow
         .flcolumn
           label Department
-          input name="dep" placeholder="Department"
+          input name="user[department]" placeholder="Department"
         .flcolumn
           label Designation
-          input name="designation" placeholder="Designation"
-      label Date of Birth
-      input name="user[dob]" placeholder="dd/mm/yy" type="date"
-      label Designation
-      input name="designation" placeholder="Designation"
-      button.btn type="submit" Add
+          input name="user[designation]" placeholder="Designation"
+      .flrow
+        .flcolumn
+          label Date of Birth
+          input name="user[dob]" placeholder="dd/mm/yy" type="date"
+        .flcolumn
+          label Date of joining
+          input name="user[doj]" placeholder="dd/mm/yy" type="date"
+      .flrow
+        .flcolumn
+          label Staff Number
+          input name="user[staffno]" placeholder="Staff Number"
+        .flcolumn
+          label Unit
+          input name="user[unit]" placeholder="Unit"
+      .flrow
+        .flcolumn
+          label Wage Group
+          input name="user[wagegroup]" placeholder="wagegroup"
+        .flcolumn
+          label Cost Center
+          input name="user[costcenter]" placeholder="Cost Center"
+      .flrow
+        .flcolumn
+          label EasyPush Access
+          select name="user[access]"
+            option No EasyPush Access
+            option Full EasyPush Access
+            option Password change
+            option User Update
+        .flcolumn
+          label Mail Quota
+          input name="user[mailquota]" placeholder="Mail Quota"
+        .flcolumn
+          label Account Status
+          select name="user[status]"
+            option Active
+            option Disabled
+      .midbox
+        button class="btn md" type="submit" Add
 

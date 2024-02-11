@@ -18,6 +18,12 @@ input {
   border: 2px solid #8b8a8b;
   border-radius: 4px;
 }
+select {
+    padding: .25em .5em;
+    background: #fff;
+    border:2px solid #8b8a8b;
+    border-radius: 4px
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -76,7 +82,7 @@ input {
   justify-content: center;
   gap: 10px;
   padding-top: 20px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
   
 }
 
@@ -152,7 +158,11 @@ input {
   display: flex;
   gap:10px;
 }
+/*size*/
+.md {
+    width: 10em
 
+}
 .error {
   color: #ff0000
 }
