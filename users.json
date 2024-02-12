@@ -1,0 +1,32 @@
+[
+  {
+    "name": "test",
+    "uname": "fff",
+    "department": "fff",
+    "designation": "ff",
+    "dob": "2024-02-07",
+    "doj": "2024-02-07",
+    "staffno": "77",
+    "unit": "77",
+    "wagegroup": "7",
+    "costcenter": "7",
+    "access": "No EasyPush Access",
+    "mailquota": "22",
+    "status": "Active"
+  },
+  {
+    "name": "test1",
+    "uname": "test@test.com",
+    "department": "derp",
+    "designation": "dep",
+    "dob": "2024-02-07",
+    "doj": "2024-02-13",
+    "staffno": "232",
+    "unit": "34",
+    "wagegroup": "g",
+    "costcenter": "f",
+    "access": "No EasyPush Access",
+    "mailquota": "22",
+    "status": "Active"
+  }
+]

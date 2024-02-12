@@ -1,8 +1,7 @@
 require 'sinatra'
 require 'slim'
-
-users = []
-new=[]
+require 'yaml'
+require 'json'
 auth=false
 get "/" do
   slim :index
@@ -30,25 +29,31 @@ post "/login" do
     slim :login
   end
 end
-get '/users' do
-  users.map {|u| slim :userlist, {locals:u}}
-end
 
 get "/userform" do
   slim :adduser
 end
+get "/user/layout" do
+  slim :userlistlayout
+end
+get '/users' do
+  #users.map {|u| slim :userlist, {locals:u}}
+  users_json=File.read("users.json")
+  users=JSON.parse(users_json)
+  users.map {|user|slim :userlist,{locals:user}}
+end
 
 post "/user" do
-  n=params['name']
-  e=params['uname']
-  users.push(params[:user])
-  p users
+  #File.open("users.yml","w") { |file| file.write params[:user].to_yaml }
+  uarr=JSON.parse(File.read("users.json"))
+  uarr << params[:user]
+  File.write("users.json",JSON.pretty_generate(uarr))
 end
 
 post "/useropt" do
-  mail=params['mail']
-  p mail
-  user=users.find {|u| u[:email]==mail}
+  uname=params['uname']
+  users=JSON.parse(File.read("users.json"))
+  user=users.find {|u| u["uname"]==uname}
   if user
     slim :useropt,{locals:user}
   else
@@ -57,9 +62,7 @@ post "/useropt" do
 end
 
 post "/useredit" do
-  n=params['name']
-  e=params['email']
-  user={name:n,email:e}
+  user=params['user']
   slim :useredit ,{locals:user}
 end
 
@@ -72,13 +75,13 @@ get "/search/form" do
 end
 
 post "/search" do
-  p params['q']
+  users=JSON.parse(File.read("users.json"))
+  selected_users = params['q'] ? (users.select{|u| u["uname"] =~ /#{Regexp.quote(params['q'])}/i}) : []
+  p selected_users
+  selected_users.map {|user| slim :userlist,{locals:user} }
 end
 
 delete "/fade_out_demo" do
   p ""
 end
 
-post "/validate/password" do
-  p "nooo"
-end

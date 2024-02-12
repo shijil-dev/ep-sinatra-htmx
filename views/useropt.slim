@@ -1,7 +1,7 @@
 .midbox
   .flcolumn
     # name:#{name}
-    # email:#{email}
-    button.nobtn hx-post="/useredit" hx-vals='{"name":"#{name}","email":"#{email}"}' hx-target="#main" update
+    # userName:#{uname}
+    button.nobtn hx-post="/useredit" hx-vals='{"name":"#{name}","uname":"#{uname}"}' hx-target="#main" update
     button.btn delete
-    button.nobtn hx-get="/users" hx-target="#main" cancel
+    button.nobtn hx-get="/user/layout" hx-target="#main" cancel

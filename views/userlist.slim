@@ -1,6 +1,4 @@
-table class="midbox" id="box" hx-post="/useropt" hx-trigger="click" hx-target="#main" hx-vals='{"mail":"#{email}"}'
-  tr
-    td Username:#{name}
-    hr
-
-
+  tr hx-post="/useropt" hx-trigger="click" hx-target="#main" hx-vals='{"uname":"#{uname}"}'
+    td #{uname}
+    td #{name}
+  
